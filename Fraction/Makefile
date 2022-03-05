@@ -1,6 +1,6 @@
 CC = g++
 
-CFLAGS = -O3 -Wall -Werror -Wextra -Wnarrowing -Wconversion -Wwrite-strings -Wcast-qual -Wundef -Wlogical-op -Wreturn-type
+CFLAGS = -O3 -Wall -Werror -Wextra -Wnarrowing -Wconversion -Wwrite-strings -Wcast-qual -Wundef -Wlogical-op -Wreturn-type -fwhole-program
 
 all: Fraction_main
 
