@@ -1,6 +1,7 @@
+#pragma once
+
 #include <iostream>
 #include <cmath>
-#pragma once
 
 #define ACCURACY 1e-8
 
@@ -55,13 +56,11 @@ namespace Frac {
             return;
         }
 
-        double decimal() { return static_cast<double>(numerator_) / denominator_; }
+        double decimal() const { return static_cast<double>(numerator_) / denominator_; }
 
 //------------------------------ Overloading assignment operator -------------------------------//
 
         const Fraction& operator=(const Fraction& Frac) {
-            if (this == &Frac) { return *this; }
-
             numerator_   = Frac.numerator_;
             denominator_ = Frac.denominator_;
             return *this;
@@ -196,13 +195,7 @@ namespace Frac {
         }
 //-------------------------------- Constructors and destructors --------------------------------//
 
-        Fraction() {
-            numerator_ = 0;
-            denominator_ = 1;
-            gcd_ = 1;
-        };
-
-        Fraction(const int& num, const int& den) : numerator_{num}, denominator_{den} {
+        Fraction(const int& num = 0, const int& den = 1) : numerator_{num}, denominator_{den} {
             if (den == 0)
                 throw std::exception();
         };
@@ -280,7 +273,7 @@ namespace Frac {
         return in;
     }
 
-//----------------------------------- Comparison overloading -----------------------------------//
+//------------------------------- Boolean operations overloading -------------------------------//
 
     bool operator==(const Fraction& A_, const Fraction& B_) {
         Fraction A = A_;
@@ -322,23 +315,11 @@ namespace Frac {
         return 0;
     }
 
-    bool operator!=(const Fraction& A, const Fraction& B) {
-        if(A == B)
-            return 0;
-        return 1;
-    }
+    bool operator!=(const Fraction& A, const Fraction& B) { return !(A == B); }
 
-    bool operator>=(const Fraction& A, const Fraction& B) {
-        if(A == B || A > B)
-            return 1;
-        return 0;
-    }
+    bool operator>=(const Fraction& A, const Fraction& B) { return (A == B || A > B); }
 
-    bool operator<=(const Fraction& A, const Fraction& B) {
-        if(A == B || A < B)
-            return 1;
-        return 0;
-    }
+    bool operator<=(const Fraction& A, const Fraction& B) { return (A == B || A < B); }
 
 //------------------- Overloading operators for reverse operations (s.t. 2 + A) ------------------//
 
@@ -365,4 +346,5 @@ namespace Frac {
         A.reduce();
         return A;
     }
+
 }

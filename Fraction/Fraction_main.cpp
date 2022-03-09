@@ -2,6 +2,7 @@
 #include "Fraction.hpp"
 
 using namespace Frac;
+using std::cout, std::endl;
 
 int main()
 {
@@ -10,54 +11,60 @@ int main()
 	Fraction A_ = A;
 
 //================================ Testing all features ================================//
-	
+
+	cout << "A = " << A << " = " << A.decimal() << endl;
+	cout << "B = " << B << " = " << B.decimal() << endl << endl;
+
+	cout << "A > B: "  << (A > B)  << endl;
+	cout << "A < B: "  << (A < B)  << endl;
+	cout << "A >= B: " << (A >= B) << endl;
+	cout << "A <= B: " << (A <= B) << endl;
+	cout << "A == B: " << (A == B) << endl << endl;
+
 	Fraction D = dec_to_reg(3.1416);
-	std::cout << "D = " << D << std::endl; 
-	std::cout << "A = " << A << " = " << A.decimal() << std::endl;
-	std::cout << "B = " << B << " = " << B.decimal() << std::endl;
+	cout << "D = " << D << endl << endl; 
 
-	std::cout << "A + B = " << A + B << std::endl;
-	std::cout << "A - B = " << A - B << std::endl;
-	std::cout << "A * B = " << A * B << std::endl;
-	std::cout << "A / B = " << A / B << std::endl;
+	cout << "A + B = " << A + B << endl;
+	cout << "A - B = " << A - B << endl;
+	cout << "A * B = " << A * B << endl;
+	cout << "A / B = " << A / B << endl << endl;
 
-	std::cout << "A += B = " << (A += B) << std::endl;
+	cout << "A += B = " << (A += B) << endl;
 	A = A_;
-	std::cout << "A -= B = " << (A -= B) << std::endl;
+	cout << "A -= B = " << (A -= B) << endl;
 	A = A_;
-	std::cout << "A *= B = " << (A *= B) << std::endl;
+	cout << "A *= B = " << (A *= B) << endl;
 	A = A_;
-	std::cout << "A /= B = " << (A /= B) << std::endl;
+	cout << "A /= B = " << (A /= B) << endl << endl;
 	A = A_;
 
-	std::cout << "A + 2 = " << A + 2 << std::endl;
-	std::cout << "A - 2 = " << A - 2 << std::endl;
-	std::cout << "A * 2 = " << A * 2 << std::endl;
-	std::cout << "A / 2 = " << A / 2 << std::endl;
+	cout << "A + 2 = " << A + 2 << endl;
+	cout << "A - 2 = " << A - 2 << endl;
+	cout << "A * 2 = " << A * 2 << endl;
+	cout << "A / 2 = " << A / 2 << endl << endl;
 
-	std::cout << "2 + A = " << 2 + A << std::endl;
-	std::cout << "2 - A = " << 2 - A << std::endl;
-	std::cout << "2 * A = " << 2 * A << std::endl;
-	std::cout << "2 / A = " << 2 / A << std::endl;
+	cout << "2 + A = " << 2 + A << endl;
+	cout << "2 - A = " << 2 - A << endl;
+	cout << "2 * A = " << 2 * A << endl;
+	cout << "2 / A = " << 2 / A << endl << endl;
 
-	std::cout << "A += 2 = " << (A += 2) << std::endl;
+	cout << "A += 2 = " << (A += 2) << endl;
 	A = A_;
-	std::cout << "A -= 2 = " << (A -= 2) << std::endl;
+	cout << "A -= 2 = " << (A -= 2) << endl;
 	A = A_;
-	std::cout << "A *= 2 = " << (A *= 2) << std::endl;
+	cout << "A *= 2 = " << (A *= 2) << endl;
 	A = A_;
-	std::cout << "A /= 2 = " << (A /= 2) << std::endl;
+	cout << "A /= 2 = " << (A /= 2) << endl << endl;
 	A = A_;
 
-	std::cout << "-A = " << -A << std::endl;
-	std::cout << "A++ = " << A++ << std::endl;
+	cout << "-A = " << -A << endl;
+	cout << "A++ = " << A++ << endl;
 	A = A_;
-	std::cout << "++A = " << ++A << std::endl;
+	cout << "++A = " << ++A << endl;
 	A = A_;
-	std::cout << "A-- = " << A-- << std::endl;
+	cout << "A-- = " << A-- << endl;
 	A = A_;
-	std::cout << "--A = " << --A << std::endl;
-	A = A_;
+	cout << "--A = " << --A << endl;
 
 	return 0;
 }
