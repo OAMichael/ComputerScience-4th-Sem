@@ -46,7 +46,6 @@ class Fraction:
 
     def reverse(self):
         self.__numerator, self.__denominator = self.__denominator, self.__numerator
-        return self
 
     def reduced(self):
         gcd_loc = self.gcd(self)
@@ -149,10 +148,13 @@ class Fraction:
 
 def main():
 #----------------------------------- Testing all features ----------------------------------#  
-
-    x = Fraction(int(input()), int(input()))
-    y = Fraction(int(input()), int(input()))
-    x_init = x
+  
+    a, b = input().split('/')
+    x = Fraction(int(a), int(b))
+    a, b = input().split('/')
+    y = Fraction(int(a), int(b))
+    x_init = Fraction(x.num, x.den)
+    print(f'x_init = {x_init}')
 
     print(f'x = {x}')
     print(f'y = {y}')
@@ -190,11 +192,13 @@ def main():
     print(f'x >= y: {x >= y}')
     print(f'-x = {-x}')
 
-    print(f'reversed = {x.reversed()}')
-    print(f'reduced  = {x.reduced() }')
-    print(f'reverse  = {x.reverse() }')
+    print(f'x reversed = {x.reversed()}')
+    print(f'x reduced  = {x.reduced() }')
+    x.reverse()
+    print(f'x reverse  = {x}')
     x = x_init
-    print(f'reduce   = {x.reverse() }')
+    x.reduce()
+    print(f'x reduce   = {x}')
 
 
 if __name__ == '__main__':
