@@ -145,6 +145,8 @@ class Fraction:
 
         return f'{self.__numerator}/{self.__denominator}'
 
+    def decimal(self):
+        return self.__numerator / self.__denominator
 
 def main():
 #----------------------------------- Testing all features ----------------------------------#  
@@ -156,32 +158,32 @@ def main():
     x_init = Fraction(x.num, x.den)
     print(f'x_init = {x_init}')
 
-    print(f'x = {x}')
-    print(f'y = {y}')
-    print(f'x + y  = {x + y}')
-    print(f'x - y  = {x - y}')
-    print(f'x * y  = {x * y}')
-    print(f'x / y  = {x / y}')
-    print(f'x ** y = {x ** y}')
+    print(f'x = {x} = {x.decimal()}')
+    print(f'y = {y} = {y.decimal()}')
+    print(f'x + y  = {x + y} = {(x + y).decimal()}')
+    print(f'x - y  = {x - y} = {(x - y).decimal()}')
+    print(f'x * y  = {x * y} = {(x * y).decimal()}')
+    print(f'x / y  = {x / y} = {(x / y).decimal()}')
+    print(f'x ** y = {x ** y} = {(x ** y).decimal()}')
     
     x += y
-    print(f'x += y =  {x}')
+    print(f'x += y =  {x} = {x.decimal()}')
     x = x_init
 
     x -= y
-    print(f'x -= y =  {x}')
+    print(f'x -= y =  {x} = {x.decimal()}')
     x = x_init
     
     x *= y
-    print(f'x *= y =  {x}')
+    print(f'x *= y =  {x} = {x.decimal()}')
     x = x_init
     
     x /= y
-    print(f'x /= y =  {x}')
+    print(f'x /= y =  {x} = {x.decimal()}')
     x = x_init
     
     x **= y
-    print(f'x **= y = {x}')
+    print(f'x **= y = {x} = {x.decimal()}')
     x = x_init
 
     print(f'x == y: {x == y}')
@@ -199,6 +201,7 @@ def main():
     x = x_init
     x.reduce()
     print(f'x reduce   = {x}')
+
 
 
 if __name__ == '__main__':
